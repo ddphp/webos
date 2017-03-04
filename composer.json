@@ -1,7 +1,7 @@
 {
-    "name": "phpv/webos",
-    "description": "基于 Laravel 5.3 扩展的 PHP 框架。",
-    "keywords": ["framework", "laravel", "webos", "phpv"],
+    "name": "ddphp/webos",
+    "description": "基于 Laravel 5.3 的东大微信公众号管理系统。",
+    "keywords": ["framework", "laravel", "webos", "ddphp"],
     "license": "MIT",
     "type": "project",
     "require": {
