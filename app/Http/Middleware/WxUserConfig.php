@@ -20,14 +20,17 @@ class WxUserConfig
     {
         $wechat = $this->config('mp.base');
         if ($wechat) {
-            config(array_dot(['wechat' => $wechat]));
+            config(['wechat' => $wechat]);
             if ($onlyWx !== 'yes') {
-                config(array_dot(['app.company' => $this->config('member.company')]));
-                config(array_dot(['app.sms' => $this->config('member.sms')]));
-                config(array_dot(['app.sms_code' => $this->config('member.verify')]));
-                config(array_dot(['app.card' => $this->config('member.card')]));
+                config([
+                    'app.company'  => $this->config('member.company'),
+                    'app.sms'      => $this->config('member.sms'),
+                    'app.sms_code' => $this->config('member.verify'),
+                    'app.card'     => $this->config('member.card')
+                ]);
+                return $next($request);
             }
         }
-        return $next($request);
+        return abort(404);
     }
 }

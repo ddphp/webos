@@ -51,6 +51,15 @@ Route::group([
             Route::get('/base', 'Base@index')->name('base');
             Route::post('/base', 'Base@store')->name('base_store');
         });
+        // 积分商城后台
+        Route::group([
+           'prefix' => '/jfsc',
+            'namespace' => 'Jfsc',
+            'as' => 'jfsc.'
+        ], function () {
+            // 活动
+            Route::get('fljh', 'Fljh@index')->name('fljh');
+        });
         // 占位菜单界面
         Route::get('/demo', 'Demo@index')->name('demo');
         // 编辑器图片上传

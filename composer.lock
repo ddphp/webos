@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d30b6f7cc760660bdf43bb5b0e5ee66f",
+    "content-hash": "f0b247055abad5e1f4b25d005dc14372",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1956,16 +1956,16 @@
         },
         {
             "name": "overtrue/laravel-wechat",
-            "version": "3.1.6",
+            "version": "3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/laravel-wechat.git",
-                "reference": "870111586830cee121cff2950b5c40912e59a17a"
+                "reference": "b9030e66b9682d4fa027b8c7cecd0c2c8a1ca244"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/laravel-wechat/870111586830cee121cff2950b5c40912e59a17a.zip",
-                "reference": "870111586830cee121cff2950b5c40912e59a17a",
+                "url": "https://packagist.phpcomposer.com/files/overtrue/laravel-wechat/b9030e66b9682d4fa027b8c7cecd0c2c8a1ca244.zip",
+                "reference": "b9030e66b9682d4fa027b8c7cecd0c2c8a1ca244",
                 "shasum": ""
             },
             "require": {
@@ -1994,7 +1994,7 @@
                 "wechat",
                 "weixin"
             ],
-            "time": "2017-02-19T12:06:47+00:00"
+            "time": "2017-02-20T07:23:03+00:00"
         },
         {
             "name": "overtrue/socialite",

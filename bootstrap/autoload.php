@@ -16,13 +16,6 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
-function menu_route($act)
-{
-    $r = explode('?', $act);
-    $p = isset($r[1]) ? explode('|', $r[1]) : [];
-    return route($r[0], $p);
-}
-
 /*
 |--------------------------------------------------------------------------
 | Include The Compiled Class File
