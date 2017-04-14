@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::share('profile', $this->profile($request));
+        View::share('_nav', parse_url($request->fullUrl(), PHP_URL_QUERY));
     }
 
     /**

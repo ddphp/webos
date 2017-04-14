@@ -8,7 +8,8 @@
     </head>
     <body>
         Laravel Web OS.
+        <span id="count">12</span>
 
-        <img src="{{ $qrUrl }}" alt="">
+        <script src="{{ asset('js/require.js') }}" data-main="{{ asset('js/demo/app.js') }}"></script>
     </body>
 </html>

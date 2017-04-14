@@ -16,7 +16,10 @@ define(['vue'], function (Vue) {
         props: {
             id: String,
             min: String,
-            max: String,
+            max: {
+                type: String,
+                default: ''
+            },
             value: String,
             dName: String,
             dWidth: String,

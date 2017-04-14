@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.30 on 2017-03-05.
+ * Generated for Laravel 5.3.30 on 2017-03-22.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11042,10 +11042,690 @@ namespace Illuminate\Support\Facades {
     }         
 }
     
-namespace Illuminate\Database\Eloquent {
+namespace Clockwork\Support\Laravel {
 
-    class Model {
+    class Facade {
         
+        /**
+         * Add a new data source
+         *
+         * @static 
+         */
+        public static function addDataSource($dataSource)
+        {
+            return \Clockwork\Clockwork::addDataSource($dataSource);
+        }
+        
+        /**
+         * Return array of all added data sources
+         *
+         * @static 
+         */
+        public static function getDataSources()
+        {
+            return \Clockwork\Clockwork::getDataSources();
+        }
+        
+        /**
+         * Return the request object
+         *
+         * @static 
+         */
+        public static function getRequest()
+        {
+            return \Clockwork\Clockwork::getRequest();
+        }
+        
+        /**
+         * Set a custom request object
+         *
+         * @static 
+         */
+        public static function setRequest($request)
+        {
+            return \Clockwork\Clockwork::setRequest($request);
+        }
+        
+        /**
+         * Add data from all data sources to request
+         *
+         * @static 
+         */
+        public static function resolveRequest()
+        {
+            return \Clockwork\Clockwork::resolveRequest();
+        }
+        
+        /**
+         * Store request via storage object
+         *
+         * @static 
+         */
+        public static function storeRequest()
+        {
+            return \Clockwork\Clockwork::storeRequest();
+        }
+        
+        /**
+         * Return the storage object
+         *
+         * @static 
+         */
+        public static function getStorage()
+        {
+            return \Clockwork\Clockwork::getStorage();
+        }
+        
+        /**
+         * Set a custom storage object
+         *
+         * @static 
+         */
+        public static function setStorage($storage)
+        {
+            return \Clockwork\Clockwork::setStorage($storage);
+        }
+        
+        /**
+         * Return the log instance
+         *
+         * @static 
+         */
+        public static function getLog()
+        {
+            return \Clockwork\Clockwork::getLog();
+        }
+        
+        /**
+         * Set a custom log instance
+         *
+         * @static 
+         */
+        public static function setLog($log)
+        {
+            return \Clockwork\Clockwork::setLog($log);
+        }
+        
+        /**
+         * Return the timeline instance
+         *
+         * @static 
+         */
+        public static function getTimeline()
+        {
+            return \Clockwork\Clockwork::getTimeline();
+        }
+        
+        /**
+         * Set a custom timeline instance
+         *
+         * @static 
+         */
+        public static function setTimeline($timeline)
+        {
+            return \Clockwork\Clockwork::setTimeline($timeline);
+        }
+        
+        /**
+         * Shortcut methods for the current log instance
+         *
+         * @static 
+         */
+        public static function log($level, $message, $context = array())
+        {
+            return \Clockwork\Clockwork::log($level, $message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function emergency($message, $context = array())
+        {
+            return \Clockwork\Clockwork::emergency($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function alert($message, $context = array())
+        {
+            return \Clockwork\Clockwork::alert($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function critical($message, $context = array())
+        {
+            return \Clockwork\Clockwork::critical($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function error($message, $context = array())
+        {
+            return \Clockwork\Clockwork::error($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function warning($message, $context = array())
+        {
+            return \Clockwork\Clockwork::warning($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function notice($message, $context = array())
+        {
+            return \Clockwork\Clockwork::notice($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function info($message, $context = array())
+        {
+            return \Clockwork\Clockwork::info($message, $context);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function debug($message, $context = array())
+        {
+            return \Clockwork\Clockwork::debug($message, $context);
+        }
+        
+        /**
+         * Shortcut methods for the current timeline instance
+         *
+         * @static 
+         */
+        public static function startEvent($name, $description, $time = null)
+        {
+            return \Clockwork\Clockwork::startEvent($name, $description, $time);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function endEvent($name)
+        {
+            return \Clockwork\Clockwork::endEvent($name);
+        }
+        
+    }         
+}
+    
+namespace Overtrue\LaravelWechat {
+
+    class Facade {
+        
+        /**
+         * Add a provider.
+         *
+         * @param string $provider
+         * @return \EasyWeChat\Foundation\Application 
+         * @static 
+         */
+        public static function addProvider($provider)
+        {
+            return \EasyWeChat\Foundation\Application::addProvider($provider);
+        }
+        
+        /**
+         * Set providers.
+         *
+         * @param array $providers
+         * @static 
+         */
+        public static function setProviders($providers)
+        {
+            return \EasyWeChat\Foundation\Application::setProviders($providers);
+        }
+        
+        /**
+         * Return all providers.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getProviders()
+        {
+            return \EasyWeChat\Foundation\Application::getProviders();
+        }
+        
+        /**
+         * Sets a parameter or an object.
+         * 
+         * Objects must be defined as Closures.
+         * 
+         * Allowing any PHP callable leads to difficult to debug problems
+         * as function names (strings) are callable (creating a function with
+         * the same name as an existing parameter would break your container).
+         *
+         * @param string $id The unique identifier for the parameter or object
+         * @param mixed $value The value of the parameter or a closure to define an object
+         * @throws \RuntimeException Prevent override of a frozen service
+         * @static 
+         */
+        public static function offsetSet($id, $value)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::offsetSet($id, $value);
+        }
+        
+        /**
+         * Gets a parameter or an object.
+         *
+         * @param string $id The unique identifier for the parameter or object
+         * @return mixed The value of the parameter or an object
+         * @throws \InvalidArgumentException if the identifier is not defined
+         * @static 
+         */
+        public static function offsetGet($id)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::offsetGet($id);
+        }
+        
+        /**
+         * Checks if a parameter or an object is set.
+         *
+         * @param string $id The unique identifier for the parameter or object
+         * @return bool 
+         * @static 
+         */
+        public static function offsetExists($id)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::offsetExists($id);
+        }
+        
+        /**
+         * Unsets a parameter or an object.
+         *
+         * @param string $id The unique identifier for the parameter or object
+         * @static 
+         */
+        public static function offsetUnset($id)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::offsetUnset($id);
+        }
+        
+        /**
+         * Marks a callable as being a factory service.
+         *
+         * @param callable $callable A service definition to be used as a factory
+         * @return callable The passed callable
+         * @throws \InvalidArgumentException Service definition has to be a closure of an invokable object
+         * @static 
+         */
+        public static function factory($callable)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::factory($callable);
+        }
+        
+        /**
+         * Protects a callable from being interpreted as a service.
+         * 
+         * This is useful when you want to store a callable as a parameter.
+         *
+         * @param callable $callable A callable to protect from being evaluated
+         * @return callable The passed callable
+         * @throws \InvalidArgumentException Service definition has to be a closure of an invokable object
+         * @static 
+         */
+        public static function protect($callable)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::protect($callable);
+        }
+        
+        /**
+         * Gets a parameter or the closure defining an object.
+         *
+         * @param string $id The unique identifier for the parameter or object
+         * @return mixed The value of the parameter or the closure defining an object
+         * @throws \InvalidArgumentException if the identifier is not defined
+         * @static 
+         */
+        public static function raw($id)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::raw($id);
+        }
+        
+        /**
+         * Extends an object definition.
+         * 
+         * Useful when you want to extend an existing object definition,
+         * without necessarily loading that object.
+         *
+         * @param string $id The unique identifier for the object
+         * @param callable $callable A service definition to extend the original
+         * @return callable The wrapped callable
+         * @throws \InvalidArgumentException if the identifier is not defined or not a service definition
+         * @static 
+         */
+        public static function extend($id, $callable)
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::extend($id, $callable);
+        }
+        
+        /**
+         * Returns all defined value names.
+         *
+         * @return array An array of value names
+         * @static 
+         */
+        public static function keys()
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::keys();
+        }
+        
+        /**
+         * Registers a service provider.
+         *
+         * @param \Pimple\ServiceProviderInterface $provider A ServiceProviderInterface instance
+         * @param array $values An array of values that customizes the provider
+         * @return static 
+         * @static 
+         */
+        public static function register($provider, $values = array())
+        {
+            //Method inherited from \Pimple\Container            
+            return \EasyWeChat\Foundation\Application::register($provider, $values);
+        }
+        
+    }         
+}
+    
+namespace Intervention\Image\Facades {
+
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */
+        public static function configure($config = array())
+        {
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function make($data)
+        {
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function canvas($width, $height, $background = null)
+        {
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+        
+    }         
+}
+    
+namespace SimpleSoftwareIO\QrCode\Facades {
+
+    class QrCode {
+        
+        /**
+         * Generates a QrCode.
+         *
+         * @param string $text The text to be converted into a QrCode
+         * @param null|string $filename The filename and path to save the QrCode file
+         * @return string|void Returns a QrCode string depending on the format, or saves to a file.
+         * @static 
+         */
+        public static function generate($text, $filename = null)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::generate($text, $filename);
+        }
+        
+        /**
+         * Merges an image with the center of the QrCode.
+         *
+         * @param $filepath string The filepath to an image
+         * @param $percentage float The amount that the merged image should be placed over the qrcode.
+         * @param $absolute boolean Whether to use an absolute filepath or not.
+         * @return $this 
+         * @static 
+         */
+        public static function merge($filepath, $percentage = '0.2', $absolute = false)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::merge($filepath, $percentage, $absolute);
+        }
+        
+        /**
+         * Merges an image string with the center of the QrCode, does not check for correct format.
+         *
+         * @param $content string The string contents of an image.
+         * @param $percentage float The amount that the merged image should be placed over the qrcode.
+         * @return $this 
+         * @static 
+         */
+        public static function mergeString($content, $percentage = '0.2')
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::mergeString($content, $percentage);
+        }
+        
+        /**
+         * Switches the format of the outputted QrCode or defaults to SVG.
+         *
+         * @param string $format The desired format.
+         * @throws \InvalidArgumentException
+         * @return $this 
+         * @static 
+         */
+        public static function format($format)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::format($format);
+        }
+        
+        /**
+         * Changes the size of the QrCode.
+         *
+         * @param int $pixels The size of the QrCode in pixels
+         * @return $this 
+         * @static 
+         */
+        public static function size($pixels)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::size($pixels);
+        }
+        
+        /**
+         * Changes the foreground color of a QrCode.
+         *
+         * @param int $red
+         * @param int $green
+         * @param int $blue
+         * @return $this 
+         * @static 
+         */
+        public static function color($red, $green, $blue)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::color($red, $green, $blue);
+        }
+        
+        /**
+         * Changes the background color of a QrCode.
+         *
+         * @param int $red
+         * @param int $green
+         * @param int $blue
+         * @return $this 
+         * @static 
+         */
+        public static function backgroundColor($red, $green, $blue)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::backgroundColor($red, $green, $blue);
+        }
+        
+        /**
+         * Changes the error correction level of a QrCode.
+         *
+         * @param string $level Desired error correction level.  L = 7% M = 15% Q = 25% H = 30%
+         * @return $this 
+         * @static 
+         */
+        public static function errorCorrection($level)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::errorCorrection($level);
+        }
+        
+        /**
+         * Creates a margin around the QrCode.
+         *
+         * @param int $margin The desired margin in pixels around the QrCode
+         * @return $this 
+         * @static 
+         */
+        public static function margin($margin)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::margin($margin);
+        }
+        
+        /**
+         * Sets the Encoding mode.
+         *
+         * @param string $encoding
+         * @return $this 
+         * @static 
+         */
+        public static function encoding($encoding)
+        {
+            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::encoding($encoding);
+        }
+        
+    }         
+}
+    
+    
+namespace {
+
+    class App extends \Illuminate\Support\Facades\App {}
+    
+    class Artisan extends \Illuminate\Support\Facades\Artisan {}
+    
+    class Auth extends \Illuminate\Support\Facades\Auth {}
+    
+    class Blade extends \Illuminate\Support\Facades\Blade {}
+    
+    class Bus extends \Illuminate\Support\Facades\Bus {}
+    
+    class Cache extends \Illuminate\Support\Facades\Cache {}
+    
+    class Config extends \Illuminate\Support\Facades\Config {}
+    
+    class Cookie extends \Illuminate\Support\Facades\Cookie {}
+    
+    class Crypt extends \Illuminate\Support\Facades\Crypt {}
+    
+    class DB extends \Illuminate\Support\Facades\DB {}
+    
+    class Event extends \Illuminate\Support\Facades\Event {}
+    
+    class File extends \Illuminate\Support\Facades\File {}
+    
+    class Gate extends \Illuminate\Support\Facades\Gate {}
+    
+    class Hash extends \Illuminate\Support\Facades\Hash {}
+    
+    class Lang extends \Illuminate\Support\Facades\Lang {}
+    
+    class Log extends \Illuminate\Support\Facades\Log {}
+    
+    class Mail extends \Illuminate\Support\Facades\Mail {}
+    
+    class Notification extends \Illuminate\Support\Facades\Notification {}
+    
+    class Password extends \Illuminate\Support\Facades\Password {}
+    
+    class Queue extends \Illuminate\Support\Facades\Queue {}
+    
+    class Redirect extends \Illuminate\Support\Facades\Redirect {}
+    
+    class Request extends \Illuminate\Support\Facades\Request {}
+    
+    class Response extends \Illuminate\Support\Facades\Response {}
+    
+    class Route extends \Illuminate\Support\Facades\Route {}
+    
+    class Schema extends \Illuminate\Support\Facades\Schema {}
+    
+    class Session extends \Illuminate\Support\Facades\Session {}
+    
+    class Storage extends \Illuminate\Support\Facades\Storage {}
+    
+    class URL extends \Illuminate\Support\Facades\URL {}
+    
+    class Validator extends \Illuminate\Support\Facades\Validator {}
+    
+    class View extends \Illuminate\Support\Facades\View {}
+    
+    class Eloquent extends \Illuminate\Database\Eloquent\Model {    
         /**
          * Register a new global scope.
          *
@@ -12880,694 +13560,7 @@ namespace Illuminate\Database\Eloquent {
         {
             return \Illuminate\Database\Query\Builder::macroCall($method, $parameters);
         }
-        
-    }         
-}
-    
-namespace Clockwork\Support\Laravel {
-
-    class Facade {
-        
-        /**
-         * Add a new data source
-         *
-         * @static 
-         */
-        public static function addDataSource($dataSource)
-        {
-            return \Clockwork\Clockwork::addDataSource($dataSource);
         }
-        
-        /**
-         * Return array of all added data sources
-         *
-         * @static 
-         */
-        public static function getDataSources()
-        {
-            return \Clockwork\Clockwork::getDataSources();
-        }
-        
-        /**
-         * Return the request object
-         *
-         * @static 
-         */
-        public static function getRequest()
-        {
-            return \Clockwork\Clockwork::getRequest();
-        }
-        
-        /**
-         * Set a custom request object
-         *
-         * @static 
-         */
-        public static function setRequest($request)
-        {
-            return \Clockwork\Clockwork::setRequest($request);
-        }
-        
-        /**
-         * Add data from all data sources to request
-         *
-         * @static 
-         */
-        public static function resolveRequest()
-        {
-            return \Clockwork\Clockwork::resolveRequest();
-        }
-        
-        /**
-         * Store request via storage object
-         *
-         * @static 
-         */
-        public static function storeRequest()
-        {
-            return \Clockwork\Clockwork::storeRequest();
-        }
-        
-        /**
-         * Return the storage object
-         *
-         * @static 
-         */
-        public static function getStorage()
-        {
-            return \Clockwork\Clockwork::getStorage();
-        }
-        
-        /**
-         * Set a custom storage object
-         *
-         * @static 
-         */
-        public static function setStorage($storage)
-        {
-            return \Clockwork\Clockwork::setStorage($storage);
-        }
-        
-        /**
-         * Return the log instance
-         *
-         * @static 
-         */
-        public static function getLog()
-        {
-            return \Clockwork\Clockwork::getLog();
-        }
-        
-        /**
-         * Set a custom log instance
-         *
-         * @static 
-         */
-        public static function setLog($log)
-        {
-            return \Clockwork\Clockwork::setLog($log);
-        }
-        
-        /**
-         * Return the timeline instance
-         *
-         * @static 
-         */
-        public static function getTimeline()
-        {
-            return \Clockwork\Clockwork::getTimeline();
-        }
-        
-        /**
-         * Set a custom timeline instance
-         *
-         * @static 
-         */
-        public static function setTimeline($timeline)
-        {
-            return \Clockwork\Clockwork::setTimeline($timeline);
-        }
-        
-        /**
-         * Shortcut methods for the current log instance
-         *
-         * @static 
-         */
-        public static function log($level, $message, $context = array())
-        {
-            return \Clockwork\Clockwork::log($level, $message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function emergency($message, $context = array())
-        {
-            return \Clockwork\Clockwork::emergency($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function alert($message, $context = array())
-        {
-            return \Clockwork\Clockwork::alert($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function critical($message, $context = array())
-        {
-            return \Clockwork\Clockwork::critical($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function error($message, $context = array())
-        {
-            return \Clockwork\Clockwork::error($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function warning($message, $context = array())
-        {
-            return \Clockwork\Clockwork::warning($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function notice($message, $context = array())
-        {
-            return \Clockwork\Clockwork::notice($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function info($message, $context = array())
-        {
-            return \Clockwork\Clockwork::info($message, $context);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function debug($message, $context = array())
-        {
-            return \Clockwork\Clockwork::debug($message, $context);
-        }
-        
-        /**
-         * Shortcut methods for the current timeline instance
-         *
-         * @static 
-         */
-        public static function startEvent($name, $description, $time = null)
-        {
-            return \Clockwork\Clockwork::startEvent($name, $description, $time);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function endEvent($name)
-        {
-            return \Clockwork\Clockwork::endEvent($name);
-        }
-        
-    }         
-}
-    
-namespace Overtrue\LaravelWechat {
-
-    class Facade {
-        
-        /**
-         * Add a provider.
-         *
-         * @param string $provider
-         * @return \EasyWeChat\Foundation\Application 
-         * @static 
-         */
-        public static function addProvider($provider)
-        {
-            return \EasyWeChat\Foundation\Application::addProvider($provider);
-        }
-        
-        /**
-         * Set providers.
-         *
-         * @param array $providers
-         * @static 
-         */
-        public static function setProviders($providers)
-        {
-            return \EasyWeChat\Foundation\Application::setProviders($providers);
-        }
-        
-        /**
-         * Return all providers.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function getProviders()
-        {
-            return \EasyWeChat\Foundation\Application::getProviders();
-        }
-        
-        /**
-         * Sets a parameter or an object.
-         * 
-         * Objects must be defined as Closures.
-         * 
-         * Allowing any PHP callable leads to difficult to debug problems
-         * as function names (strings) are callable (creating a function with
-         * the same name as an existing parameter would break your container).
-         *
-         * @param string $id The unique identifier for the parameter or object
-         * @param mixed $value The value of the parameter or a closure to define an object
-         * @throws \RuntimeException Prevent override of a frozen service
-         * @static 
-         */
-        public static function offsetSet($id, $value)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::offsetSet($id, $value);
-        }
-        
-        /**
-         * Gets a parameter or an object.
-         *
-         * @param string $id The unique identifier for the parameter or object
-         * @return mixed The value of the parameter or an object
-         * @throws \InvalidArgumentException if the identifier is not defined
-         * @static 
-         */
-        public static function offsetGet($id)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::offsetGet($id);
-        }
-        
-        /**
-         * Checks if a parameter or an object is set.
-         *
-         * @param string $id The unique identifier for the parameter or object
-         * @return bool 
-         * @static 
-         */
-        public static function offsetExists($id)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::offsetExists($id);
-        }
-        
-        /**
-         * Unsets a parameter or an object.
-         *
-         * @param string $id The unique identifier for the parameter or object
-         * @static 
-         */
-        public static function offsetUnset($id)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::offsetUnset($id);
-        }
-        
-        /**
-         * Marks a callable as being a factory service.
-         *
-         * @param callable $callable A service definition to be used as a factory
-         * @return callable The passed callable
-         * @throws \InvalidArgumentException Service definition has to be a closure of an invokable object
-         * @static 
-         */
-        public static function factory($callable)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::factory($callable);
-        }
-        
-        /**
-         * Protects a callable from being interpreted as a service.
-         * 
-         * This is useful when you want to store a callable as a parameter.
-         *
-         * @param callable $callable A callable to protect from being evaluated
-         * @return callable The passed callable
-         * @throws \InvalidArgumentException Service definition has to be a closure of an invokable object
-         * @static 
-         */
-        public static function protect($callable)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::protect($callable);
-        }
-        
-        /**
-         * Gets a parameter or the closure defining an object.
-         *
-         * @param string $id The unique identifier for the parameter or object
-         * @return mixed The value of the parameter or the closure defining an object
-         * @throws \InvalidArgumentException if the identifier is not defined
-         * @static 
-         */
-        public static function raw($id)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::raw($id);
-        }
-        
-        /**
-         * Extends an object definition.
-         * 
-         * Useful when you want to extend an existing object definition,
-         * without necessarily loading that object.
-         *
-         * @param string $id The unique identifier for the object
-         * @param callable $callable A service definition to extend the original
-         * @return callable The wrapped callable
-         * @throws \InvalidArgumentException if the identifier is not defined or not a service definition
-         * @static 
-         */
-        public static function extend($id, $callable)
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::extend($id, $callable);
-        }
-        
-        /**
-         * Returns all defined value names.
-         *
-         * @return array An array of value names
-         * @static 
-         */
-        public static function keys()
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::keys();
-        }
-        
-        /**
-         * Registers a service provider.
-         *
-         * @param \Pimple\ServiceProviderInterface $provider A ServiceProviderInterface instance
-         * @param array $values An array of values that customizes the provider
-         * @return static 
-         * @static 
-         */
-        public static function register($provider, $values = array())
-        {
-            //Method inherited from \Pimple\Container            
-            return \EasyWeChat\Foundation\Application::register($provider, $values);
-        }
-        
-    }         
-}
-    
-namespace Intervention\Image\Facades {
-
-    class Image {
-        
-        /**
-         * Overrides configuration settings
-         *
-         * @param array $config
-         * @static 
-         */
-        public static function configure($config = array())
-        {
-            return \Intervention\Image\ImageManager::configure($config);
-        }
-        
-        /**
-         * Initiates an Image instance from different input types
-         *
-         * @param mixed $data
-         * @return \Intervention\Image\Image 
-         * @static 
-         */
-        public static function make($data)
-        {
-            return \Intervention\Image\ImageManager::make($data);
-        }
-        
-        /**
-         * Creates an empty image canvas
-         *
-         * @param integer $width
-         * @param integer $height
-         * @param mixed $background
-         * @return \Intervention\Image\Image 
-         * @static 
-         */
-        public static function canvas($width, $height, $background = null)
-        {
-            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
-        }
-        
-        /**
-         * Create new cached image and run callback
-         * (requires additional package intervention/imagecache)
-         *
-         * @param \Closure $callback
-         * @param integer $lifetime
-         * @param boolean $returnObj
-         * @return \Image 
-         * @static 
-         */
-        public static function cache($callback, $lifetime = null, $returnObj = false)
-        {
-            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
-        }
-        
-    }         
-}
-    
-namespace SimpleSoftwareIO\QrCode\Facades {
-
-    class QrCode {
-        
-        /**
-         * Generates a QrCode.
-         *
-         * @param string $text The text to be converted into a QrCode
-         * @param null|string $filename The filename and path to save the QrCode file
-         * @return string|void Returns a QrCode string depending on the format, or saves to a file.
-         * @static 
-         */
-        public static function generate($text, $filename = null)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::generate($text, $filename);
-        }
-        
-        /**
-         * Merges an image with the center of the QrCode.
-         *
-         * @param $filepath string The filepath to an image
-         * @param $percentage float The amount that the merged image should be placed over the qrcode.
-         * @param $absolute boolean Whether to use an absolute filepath or not.
-         * @return $this 
-         * @static 
-         */
-        public static function merge($filepath, $percentage = '0.2', $absolute = false)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::merge($filepath, $percentage, $absolute);
-        }
-        
-        /**
-         * Merges an image string with the center of the QrCode, does not check for correct format.
-         *
-         * @param $content string The string contents of an image.
-         * @param $percentage float The amount that the merged image should be placed over the qrcode.
-         * @return $this 
-         * @static 
-         */
-        public static function mergeString($content, $percentage = '0.2')
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::mergeString($content, $percentage);
-        }
-        
-        /**
-         * Switches the format of the outputted QrCode or defaults to SVG.
-         *
-         * @param string $format The desired format.
-         * @throws \InvalidArgumentException
-         * @return $this 
-         * @static 
-         */
-        public static function format($format)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::format($format);
-        }
-        
-        /**
-         * Changes the size of the QrCode.
-         *
-         * @param int $pixels The size of the QrCode in pixels
-         * @return $this 
-         * @static 
-         */
-        public static function size($pixels)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::size($pixels);
-        }
-        
-        /**
-         * Changes the foreground color of a QrCode.
-         *
-         * @param int $red
-         * @param int $green
-         * @param int $blue
-         * @return $this 
-         * @static 
-         */
-        public static function color($red, $green, $blue)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::color($red, $green, $blue);
-        }
-        
-        /**
-         * Changes the background color of a QrCode.
-         *
-         * @param int $red
-         * @param int $green
-         * @param int $blue
-         * @return $this 
-         * @static 
-         */
-        public static function backgroundColor($red, $green, $blue)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::backgroundColor($red, $green, $blue);
-        }
-        
-        /**
-         * Changes the error correction level of a QrCode.
-         *
-         * @param string $level Desired error correction level.  L = 7% M = 15% Q = 25% H = 30%
-         * @return $this 
-         * @static 
-         */
-        public static function errorCorrection($level)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::errorCorrection($level);
-        }
-        
-        /**
-         * Creates a margin around the QrCode.
-         *
-         * @param int $margin The desired margin in pixels around the QrCode
-         * @return $this 
-         * @static 
-         */
-        public static function margin($margin)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::margin($margin);
-        }
-        
-        /**
-         * Sets the Encoding mode.
-         *
-         * @param string $encoding
-         * @return $this 
-         * @static 
-         */
-        public static function encoding($encoding)
-        {
-            return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::encoding($encoding);
-        }
-        
-    }         
-}
-    
-    
-namespace {
-
-    class App extends \Illuminate\Support\Facades\App {}
-    
-    class Artisan extends \Illuminate\Support\Facades\Artisan {}
-    
-    class Auth extends \Illuminate\Support\Facades\Auth {}
-    
-    class Blade extends \Illuminate\Support\Facades\Blade {}
-    
-    class Bus extends \Illuminate\Support\Facades\Bus {}
-    
-    class Cache extends \Illuminate\Support\Facades\Cache {}
-    
-    class Config extends \Illuminate\Support\Facades\Config {}
-    
-    class Cookie extends \Illuminate\Support\Facades\Cookie {}
-    
-    class Crypt extends \Illuminate\Support\Facades\Crypt {}
-    
-    class DB extends \Illuminate\Support\Facades\DB {}
-    
-    class Event extends \Illuminate\Support\Facades\Event {}
-    
-    class File extends \Illuminate\Support\Facades\File {}
-    
-    class Gate extends \Illuminate\Support\Facades\Gate {}
-    
-    class Hash extends \Illuminate\Support\Facades\Hash {}
-    
-    class Lang extends \Illuminate\Support\Facades\Lang {}
-    
-    class Log extends \Illuminate\Support\Facades\Log {}
-    
-    class Mail extends \Illuminate\Support\Facades\Mail {}
-    
-    class Notification extends \Illuminate\Support\Facades\Notification {}
-    
-    class Password extends \Illuminate\Support\Facades\Password {}
-    
-    class Queue extends \Illuminate\Support\Facades\Queue {}
-    
-    class Redirect extends \Illuminate\Support\Facades\Redirect {}
-    
-    class Request extends \Illuminate\Support\Facades\Request {}
-    
-    class Response extends \Illuminate\Support\Facades\Response {}
-    
-    class Route extends \Illuminate\Support\Facades\Route {}
-    
-    class Schema extends \Illuminate\Support\Facades\Schema {}
-    
-    class Session extends \Illuminate\Support\Facades\Session {}
-    
-    class Storage extends \Illuminate\Support\Facades\Storage {}
-    
-    class URL extends \Illuminate\Support\Facades\URL {}
-    
-    class Validator extends \Illuminate\Support\Facades\Validator {}
-    
-    class View extends \Illuminate\Support\Facades\View {}
-    
-    class Eloquent extends \Illuminate\Database\Eloquent\Model {}
     
     class Clockwork extends \Clockwork\Support\Laravel\Facade {}
     

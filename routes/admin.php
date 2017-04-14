@@ -51,9 +51,29 @@ Route::group([
             Route::get('/base', 'Base@index')->name('base');
             Route::post('/base', 'Base@store')->name('base_store');
         });
+        // 微信投票
+        Route::group([
+            'prefix'    => '/tp',
+            'namespace' => 'Tp',
+            'as'        => 'tp.'
+        ], function () {
+            Route::delete('/players/{player}', "Player@delete");
+            Route::get('/index', 'Index@index')->name('index');
+            Route::get('/content/{activity}', 'ActivityContent@edit')->name('content.edit');
+            Route::post('/content/{activity}', 'ActivityContent@store')->name('content.store');
+            Route::get('/{activity?}', 'Index@edit')->where('activity', '^\d+$')->name('edit');
+            Route::post('/{activity?}', 'Index@save')->where('activity', '^\d+$')->name('save');
+            Route::post('/query', 'Index@query')->name('query');
+            Route::get('/{activity}/player', 'Player@index')->name('player');
+            Route::get('/{activity}/player/{player}', 'Player@edit')->where('player', '^\d+$')->name('player.edit');
+            Route::get('/{activity}/player/{number}/detail', 'Player@detail')->name('player.detail');
+            Route::post('/{activity}/player/{number}/detail', 'Player@detailStore')->name('player.detail.store');
+            Route::post('/{activity}/player/{player}', 'Player@save')->where('player', '^\d+$')->name('player.save');
+
+        });
         // 积分商城后台
         Route::group([
-           'prefix' => '/jfsc',
+            'prefix' => '/jfsc',
             'namespace' => 'Jfsc',
             'as' => 'jfsc.'
         ], function () {
@@ -62,15 +82,16 @@ Route::group([
         });
         // 占位菜单界面
         Route::get('/demo', 'Demo@index')->name('demo');
-        // 编辑器图片上传
-        Route::post('img/upload', 'Tools\ImgManager@upload')->name('img.upload');
-        Route::get('img/{id}', 'Tools\ImgManager@show')->name('img.show');
+
         // 系统信息
         Route::get('/system/info', 'System@info')->name('system.info');
         Route::get('/system/user', 'System@user')->name('system.user');
         // 登出系统
         Route::get('/logout', 'Index@logout')->name('logout');
     });
+    // 编辑器图片上传
+    Route::post('img/upload', 'Tools\ImgManager@upload')->name('img.upload');
+    Route::get('img/{id}.{ext}', 'Tools\ImgManager@show')->name('img.show');
     // 后台登录
     Route::group([
         'prefix' => '/login',

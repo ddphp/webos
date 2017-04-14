@@ -16,10 +16,7 @@
 </head>
 <body class="{{ $head['body']['class'] or '' }}">
 @yield('body')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('vendor/layer/layer.js') }}"></script>
-<script src="{{ asset('js/underscore.js') }}"></script>
-<script src="{{ asset('js/require.js') }}"></script>
+
 @yield('foot')
 </body>
 </html>

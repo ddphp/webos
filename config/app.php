@@ -187,6 +187,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
+        \App\Providers\VotingServiceProvider::class,
+
     ],
 
     /*

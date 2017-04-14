@@ -40,7 +40,7 @@
         </div>
         <div class="weui-cells__tips">
             <p class="text-info">
-                <i class="fa fa-info-circle" aria-hidden="true"></i> 请先输入卡号，然后点击获取验证码。
+                <i class="fa fa-info-circle" aria-hidden="true"></i> 请先输入卡号、手机号或身份证号，然后点击获取验证码。
             </p>
         </div>
 

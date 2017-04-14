@@ -60,6 +60,7 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/wx.php');
             require base_path('routes/friend.php');
             require base_path('routes/test.php');
+            require base_path('routes/voting.php');
         });
     }
 

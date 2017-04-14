@@ -25,10 +25,10 @@ class ImgManager extends Controller
             $model->mime = $file->getMimeType();
             $model->save();
         }
-        return route('admin.img.show', [$model->id]);
+        return route('admin.img.show', [$model->id, $model->ext]);
     }
 
-    public function show($id)
+    public function show($id, $ext)
     {
         $width = 480;
         $imgModel = Images::findOrFail($id);
@@ -36,9 +36,9 @@ class ImgManager extends Controller
         $img->resize($width, $width*$img->height()/$img->width());
         $response = \Response::make($img->encode($imgModel->ext));
         $response->header('Content-Type', $imgModel->mime);  // Content-Type:image/jpeg
-//        $cache = 3600 * 24 * 365;
-//        $response->header('Cache-Control', "max-age={$cache}");
-//        $response->header('Last-Modified', gmdate('D, d M Y H:i:s', time()).' GMT');
+        $cache = 3600 * 24 * 365;
+        $response->header('Cache-Control', "max-age={$cache}");
+        $response->header('Last-Modified', gmdate('D, d M Y H:i:s', time()).' GMT');
         return $response;
     }
 }

@@ -1,7 +1,18 @@
+<?php
+if (isset($_crumb)) {
+$profile['crumb'][] = $_crumb;
+}
+?>
+
 @extends('admin.inc.base')
 
 @section('foot')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('vendor/layer/layer.js') }}"></script>
+    <script src="{{ asset('js/underscore.js') }}"></script>
+    <script src="{{ asset('js/require.js') }}"></script>
     <script src="{{ asset('ctrl/admin/index.js') }}"></script>
+    <script src="{{ asset('ctrl/admin/list.js') }}"></script>
 @stop
 
 @section('body')
@@ -77,7 +88,7 @@
     </nav>
     <div class="uk-width-8-10 uk-container-center">
         <div class="uk-grid uk-grid-divider">
-            <div class="uk-width-1-4">
+            <div id="main-list" class="uk-width-1-5">
                 <ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav>
                     <li class="uk-nav-header"><i class="uk-icon-lastfm"></i> {{ $profile['menu']->name }} <i class="fa fa-lastfm fa-rotate-180"></i></li>
                     <li class="uk-nav-divider"></li>
@@ -85,7 +96,7 @@
                         @foreach($lists as $list)
                             @if($list->act)
                                 <li class="{{ $profile['curr']===$list->id ? 'uk-active' : ''  }}">
-                                    <a href="{{ menu_route($list->act)."?t=list&i={$list->id}" }}">
+                                    <a v-on:click="href('{{$list->act}}', 't=list&i={{$list->id}}')">
                                         {{ $list->name }}
                                     </a>
                                 </li>
@@ -96,7 +107,7 @@
                                         @foreach($list->child->sortBy('gnum')->groupBy('gnum') as $children)
                                             @foreach($children as $child)
                                                 <li>
-                                                    <a href="{{ menu_route($child->act)."?t=item&i={$child->id}" }}">
+                                                    <a v-on:click="href('{{$child->act}}', 't=list&i={{$child->id}}')">
                                                         @if ($child->icon)
                                                             <i class="uk-icon-{{ $child->icon }}"></i> {{ $child->name }}
                                                         @else
@@ -119,19 +130,11 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="uk-width-3-4">
+            <div class="uk-width-4-5">
                 <ul class="uk-breadcrumb uk-margin-bottom">
                     <li class="uk-text-bold">当前位置：</li>
                     @foreach($profile['crumb'] as $crumb)
-                        @if ($crumb['act'])
-                            @if (!$loop->last)
-                                <li><a href="{{ menu_route($crumb['act']).$crumb['param'] }}">{{ $crumb['name'] }}</a></li>
-                            @else
-                                <li class="uk-active"><span>{{ $crumb['name'] }}</span></li>
-                            @endif
-                        @else
-                            <li><span>{{ $crumb['name'] }}</span></li>
-                        @endif
+                        <li><span>{{ $crumb['name'] }}</span></li>
                     @endforeach
                 </ul>
                 <hr class="uk-divider">
